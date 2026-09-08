@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Contact - Whisked Wonders</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Header -->
+<header>
+
+    <h1>Whisked Wonders</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- Contact Section -->
+<main>
+
+    <section id="contact">
+
+        <h2>Let's Create Your Cake</h2>
+
+        <p class="contact-intro">
+            Have a cake idea in mind? Tell us what you would like,
+            and we'll get back to you through WhatsApp.
+        </p>
+
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+
+            <div class="contact-box">
+
+                <h3>📱 WhatsApp</h3>
+
+                <p>
+                    Chat with us directly about your order.
+                </p>
+
+                <a href="https://wa.me/2349169012314"
+                   target="_blank"
+                   class="contact-link">
+                    Chat on WhatsApp
+                </a>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>📸 Instagram</h3>
+
+                <p>
+                    See our latest cakes and designs.
+                </p>
+
+                <a href="https://www.instagram.com/Whisked_Wonders/"
+                   target="_blank"
+                   class="contact-link">
+                    Visit Instagram
+                </a>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>🎂 Custom Cakes</h3>
+
+                <p>
+                    Have a special design in mind?
+                    Tell us about it below.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Order Form -->
+        <div class="order-form-container">
+
+            <h3>Place Your Cake Request</h3>
+
+            <p>
+                Fill in the details below and we'll open WhatsApp
+                with your request ready to send.
+            </p>
+
+
+            <form class="order-form" onsubmit="sendToWhatsApp(event)">
+
+                <label for="name">Your Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="phone">Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+
+                <label for="cake">Cake Type</label>
+
+                <select id="cake" required>
+
+                    <option value="">Select a cake type</option>
+
+                    <option value="Birthday Cake">
+                        Birthday Cake
+                    </option>
+
+                    <option value="Wedding Cake">
+                        Wedding Cake
+                    </option>
+
+                    <option value="Chocolate Cake">
+                        Chocolate Cake
+                    </option>
+
+                    <option value="Red Velvet Cake">
+                        Red Velvet Cake
+                    </option>
+
+                    <option value="Custom Cake">
+                        Custom Cake
+                    </option>
+
+                </select>
+
+
+                <label for="details">
+                    Tell us about your cake
+                </label>
+
+                <textarea
+                    id="details"
+                    placeholder="Tell us the design, size, occasion, date, colours, or anything else you have in mind..."
+                    required
+                ></textarea>
+
+
+                <button type="submit" class="btn">
+                    Send Request on WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>
+        &copy; 2026 Whisked Wonders - Cakes by Wajiha.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- WhatsApp Script -->
+<script>
+
+    function sendToWhatsApp(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const cake = document.getElementById("cake").value;
+        const details = document.getElementById("details").value;
+
+
+        const message =
+            "Hello Whisked Wonders! 🍰%0A%0A" +
+            "I would like to place an order.%0A%0A" +
+            "Name: " + encodeURIComponent(name) + "%0A" +
+            "Phone: " + encodeURIComponent(phone) + "%0A" +
+            "Cake: " + encodeURIComponent(cake) + "%0A" +
+            "Details: " + encodeURIComponent(details);
+
+
+        window.open(
+            "https://wa.me/2349169012314?text=" + message,
+            "_blank"
+        );
+
+    }
+
+</script>
+```
+
+</body>
+
+</html>
